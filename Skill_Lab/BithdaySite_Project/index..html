@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Birthday Wishes for My Bestie 🎉</title>
+  <style>
+    body {
+      font-family: "Comic Sans MS", cursive, sans-serif;
+      background: linear-gradient(to right, #ffe6f0, #e6f7ff, #fff5e6);
+      color: #444;
+      text-align: center;
+      padding: 40px;
+      overflow-x: hidden;
+    }
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+      color: #ff80aa;
+      animation: floatTitle 3s ease-in-out infinite;
+    }
+    p {
+      margin-bottom: 30px;
+      color: #666;
+      font-size: 1.1rem;
+    }
+    .wish {
+      background: #fffafc;
+      padding: 20px;
+      margin: 20px auto;
+      border-radius: 20px;
+      max-width: 600px;
+      box-shadow: 0px 6px 10px rgba(0,0,0,0.08);
+      font-size: 1.2rem;
+      position: relative;
+    }
+    .wish::before {
+      content: "💖🍰";
+      position: absolute;
+      top: -15px;
+      left: -15px;
+      font-size: 1.5rem;
+    }
+    .wish::after {
+      content: "🧁💝";
+      position: absolute;
+      bottom: -15px;
+      right: -15px;
+      font-size: 1.5rem;
+    }
+    .date {
+      font-size: 0.9rem;
+      color: #888;
+      margin-bottom: 8px;
+    }
+
+    /* Floating animation for title */
+    @keyframes floatTitle {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    /* Floating hearts */
+    .heart {
+      position: fixed;
+      bottom: -50px;
+      font-size: 1.5rem;
+      animation: floatHearts 6s linear infinite;
+      opacity: 0.7;
+    }
+    @keyframes floatHearts {
+      0% { transform: translateY(0) scale(1); opacity: 0.8; }
+      100% { transform: translateY(-110vh) scale(1.3); opacity: 0; }
+    }
+
+    /* Music button */
+    .music-btn {
+      background: #ffb6c1;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 25px;
+      font-size: 1rem;
+      cursor: pointer;
+      margin-bottom: 20px;
+      box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
+      transition: transform 0.2s ease;
+    }
+    .music-btn:hover {
+      transform: scale(1.05);
+      background: #ff99bb;
+    }
+
+    /* Popup overlay */
+    .popup {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(255, 192, 203, 0.95);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      flex-direction: column;
+      text-align: center;
+      animation: fadeIn 1s ease;
+    }
+    .popup h2 {
+      font-size: 3rem;
+      color: #ff4081;
+      margin-bottom: 20px;
+      animation: bounce 1.5s infinite;
+    }
+    .popup button {
+      background: white;
+      border: 2px solid #ff80aa;
+      padding: 12px 25px;
+      border-radius: 30px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    .popup button:hover {
+      background: #ff80aa;
+      color: white;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-15px); }
+    }
+  </style>
+</head>
+<body>
+  <!-- Popup -->
+  <div id="popup" class="popup">
+    <h2>🎉 Happy Birthday My Poopsiieee Babyyyy🎉</h2>
+    <button onclick="closePopup()">💖 Open Your Surprises 💖</button>
+  </div>
+
+  <h1>💝 Sweet Wishes for uh my Love 💝</h1>
+  <p>Every day I wrote something sweet for you… now you get to see them all 🍩🧁🎂</p>
+
+  <!-- Play music button -->
+  <button class="music-btn" onclick="playMusic()">▶️ Play Birthday Song 🎶</button>
+
+  <div id="wishes"></div>
+
+  <!-- floating hearts -->
+  <div class="heart" style="left:10%;">💖</div>
+  <div class="heart" style="left:30%; animation-delay: 2s;">🍩</div>
+  <div class="heart" style="left:50%; animation-delay: 4s;">🧁</div>
+  <div class="heart" style="left:70%; animation-delay: 1s;">🎂</div>
+  <div class="heart" style="left:90%; animation-delay: 3s;">💝</div>
+
+  <!-- Background music -->
+  <audio id="birthdaySong" loop>
+    <source src="birthday.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+  <script>
+    // Wishes
+    const wishes = [
+      { date: "Day 1", text: "Heyyyy loveeeee so it's oct 14th today and 19 more days to go uh will finally turn 19th letss gooo and ukkk i amm always super gratefull to have uh in my life. Just thinking ki haan ye bkl hai mere life mai, mere leye makes everything soo much easier  knowing uh for almost 5 years is soo amazing even though tu mera dimag khate hai but trust meh I love it soo much when uh yap and jab tu nakhre dekhate hai like agar tu nahi tou aur kon he dikhayega nakhree!!🧁✨" },
+      { date: "Day 2", text: "18 moreeee dayss toooo gooooo wohoooooo !!! uk what the very first time we met even thoUgh i don't remeMber stuffzzss in detail butt butt jab ham mile thae na mujhe laga her kese ke tarha uh will be a casual frnd, but now we are here with eachother almost every fking day clg mai ghar mai except for sleeping and ghar ke kaam vr amost hamesha ek saathhh and i just loveeee thiss sooo muchh!!....UH BEING THERE FOR MEH HAMESHAA HAVING MY BACK SUPPORTING MEH HER CHUTIYA KAAM MAIIII MAKESS MEH FEEL KE HAAN YAAR KOI TOU HAI APNA ISS LIFE MAI !!! THANKYOUUUU SOOO SOOO MUCHHH IN SABB KELEYEEEE!!....I LOVEEE UHHHH MY BEAANNNNNN!!!!!🍬💖" },
+      { date: "Day 3", text: "LALALALLALA 17eennnnn more daysss to gooo baalle ballleee !!!...tujhe pata hai jab bhi ham ek saath hote hai na there is this song which is everytime on my mind and goes like,I can pick you up When you're heading down When it all just sucks  🎂💕" },
+      // keep adding more...
+    ];
+
+    const wishesContainer = document.getElementById("wishes");
+
+    wishes.forEach(wish => {
+      const wishDiv = document.createElement("div");
+      wishDiv.classList.add("wish");
+
+      wishDiv.innerHTML = `
+        <div class="date">${wish.date}</div>
+        <div>${wish.text}</div>
+      `;
+
+      wishesContainer.appendChild(wishDiv);
+    });
+
+    // Play music
+    function playMusic() {
+      const song = document.getElementById("birthdaySong");
+      song.play();
+    }
+
+    // Close popup
+    function closePopup() {
+      document.getElementById("popup").style.display = "none";
+    }
+  </script>
+</body>
+</html>
